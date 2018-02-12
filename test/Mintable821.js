@@ -8,7 +8,7 @@ const Mintable821 = artifacts.require('Mintable821.sol');
 
 contract('Mintable821', function (accounts) {
   beforeEach(async function () {
-    this.mintable= await Mintable821.new(accounts[1]);
+    this.mintable = await Mintable821.new(accounts[1]);
   });
 
   it('cannot mint a token from an account that is not the minter', async function () {
