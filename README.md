@@ -14,6 +14,8 @@ Start a local blockchain like [Ganache](https://github.com/trufflesuite/ganache)
 ganache-cli
 ```
 
+In 2_deploy_contract.js change the second argument of the deployer function to the address that will mint the tokens.
+
 Compile and migrate your local smart contracts.
 
 ```
