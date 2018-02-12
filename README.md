@@ -16,6 +16,10 @@ ganache-cli
 
 In 2_deploy_contract.js change the second argument of the deployer function to the address that will mint the tokens.
 
+```
+deployer.deploy(Mintable821, "0xsomeaddresshere");
+```
+
 Compile and migrate your local smart contracts.
 
 ```
