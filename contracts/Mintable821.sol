@@ -4,9 +4,11 @@ import 'zeppelin-solidity/contracts/ownership/rbac/RBAC.sol';
 import './StandardAssetRegistry.sol';
 
 contract Mintable821 is StandardAssetRegistry, RBAC {
+  event Mint(uint256 assetId, address indexed beneficiary);
+  event MintFinished();
   
   string constant ROLE_MINTER = "minter"; 
-  bool minting;
+  bool public minting;
 
   modifier onlyMinter() {
     require(
@@ -41,6 +43,7 @@ contract Mintable821 is StandardAssetRegistry, RBAC {
     public
   {
     _generate(assetId, beneficiary, data);
+    Mint(assetId, beneficiary, data);
   }
 
   // function update(uint256 assetId, string data)
@@ -64,5 +67,6 @@ contract Mintable821 is StandardAssetRegistry, RBAC {
     public
   {
     minting = false;
+    MintFinished();
   }
 }
